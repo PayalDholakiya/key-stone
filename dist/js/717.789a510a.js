@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvuejs_tailwindcss_portfolio"]=self["webpackChunkvuejs_tailwindcss_portfolio"]||[]).push([[717],{717:function(n,s,t){function e(n,s){return" Industries "}t.r(s),t.d(s,{default:function(){return o}});var r=t(744);const u={},i=(0,r.Z)(u,[["render",e]]);var o=i}}]);
+//# sourceMappingURL=717.789a510a.js.map
