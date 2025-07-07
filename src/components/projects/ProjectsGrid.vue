@@ -1,22 +1,22 @@
 <template>
   <!-- Projects grid -->
-  <section data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+  <section>
     <!-- Projects grid title -->
-    <div class="text-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+    <div class="text-center" data-aos="fade-down" data-aos-delay="100">
       <p class="font-general-semibold text-2xl sm:text-5xl font-semibold mb-2 text-ternary-dark dark:text-ternary-light">
         {{ projectsHeading }}
       </p>
     </div>
 
     <!-- Filter and search projects -->
-    <div data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="400">
+    <div data-aos="fade-down" data-aos-delay="300">
       <h3 class="font-general-regular text-center text-secondary-dark dark:text-ternary-light text-md sm:text-xl font-normal mb-4">
         Whether it’s new or used equipment, we offer quick turnaround and very low rates. Contact us to learn more about the services we offer for each of these industries.
       </h3>
     </div>
 
     <!-- Filter and search projects section -->
-    <div data-aos="slide-up" data-aos-duration="500" data-aos-delay="600">
+    <div data-aos="fade-up" data-aos-delay="400">
       <div class="flex justify-between border-b border-primary-light dark:border-secondary-dark pb-3 gap-2">
         <div class="flex justify-between gap-2">
           <span class="hidden sm:block bg-primary-light dark:bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer">
@@ -28,7 +28,7 @@
             id="name"
             name="name"
             type="search"
-            required=""
+            required
             placeholder="Search Industry"
             aria-label="Name"
           />
@@ -43,9 +43,6 @@
         v-for="(project) in filteredProjects"
         :key="project.id"
         :project="project"
-        :data-aos="'flip-left'"
-        :data-aos-duration="500"
-        :data-aos-delay="300"
       />
     </div>
   </section>
@@ -56,12 +53,12 @@ import feather from "feather-icons";
 import ProjectsFilter from "./ProjectsFilter.vue";
 import ProjectSingle from "./ProjectSingle.vue";
 import projects from "../../data/projects";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export default {
   components: { ProjectSingle, ProjectsFilter },
-  data: () => {
+  data() {
     return {
       projects,
       projectsHeading: "Industries",
@@ -98,15 +95,15 @@ export default {
   mounted() {
     feather.replace();
     AOS.init({
-      duration: 500,
-      easing: "ease-in-out",
-      once: true,
-    });
-    AOS.refresh();
+			duration: 800,
+			once: true,
+			easing: 'ease-in-out',
+		})
   },
   updated() {
-    AOS.refresh();
-  },
+		feather.replace()
+		AOS.refresh()
+	},
 };
 </script>
 

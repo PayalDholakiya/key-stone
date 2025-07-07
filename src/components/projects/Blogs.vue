@@ -1,16 +1,13 @@
 <template>
-  <section class="py-12 mt-6 ">
+  <section class="py-12 mt-6">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8">Latest Blog Posts</h2>
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8" data-aos="fade-down" data-aos-delay="1000">Latest Blog Posts</h2>
       <div class="grid md:grid-cols-3 gap-8">
         <div
           v-for="post in blogPosts"
           :key="post.id"
           class="bg-white rounded-lg shadow hover:shadow-lg transition"
-            data-aos="fade-up"
-  data-aos-delay="100"
-  data-aos-duration="800"
-
+          data-aos="zoom-in" data-aos-duration="300"
         >
           <img :src="post.image" :alt="post.title" class="w-full h-48 object-cover rounded-t-lg" />
           <div class="p-4">
@@ -25,7 +22,7 @@
 </template>
 
 <script>
-// ✅ Import images at the top of the same file
+// ✅ Import images
 import image1 from '@/assets/images/image5.jpg'
 import image2 from '@/assets/images/image6.jpg'
 import image3 from '@/assets/images/image7.jpg'
